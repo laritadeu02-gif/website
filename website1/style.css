@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #0d1117;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== MAIN / BACKGROUND ===== */
+.main {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url('tree-bg.png') center center / cover no-repeat;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+/* camada escura para o texto continuar legível sobre a foto */
+.main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0.45) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.logo {
+    color: #ff7a1a;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.menu ul {
+    display: flex;
+    gap: 35px;
+}
+
+.menu ul li a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.menu ul li a:hover {
+    color: #ff7a1a;
+}
+
+.search {
+    display: flex;
+}
+
+.srch {
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    border-radius: 4px 0 0 4px;
+    width: 180px;
+}
+
+.srch::placeholder {
+    color: #ccc;
+}
+
+.btn {
+    padding: 10px 22px;
+    background: #ff7a1a;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+.btn:hover {
+    background: #e56a0f;
+}
+
+/* ===== HERO CONTENT ===== */
+.content {
+    position: relative;
+    z-index: 5;
+    max-width: 620px;
+    padding: 60px 0 60px 60px;
+}
+
+.content h1 {
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 48px;
+    line-height: 1.25;
+    margin-bottom: 25px;
+}
+
+.content h1 span {
+    color: #ff7a1a;
+}
+
+.par {
+    color: #eee;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 30px;
+}
+
+.cn {
+    background: #ff7a1a;
+    border: none;
+    padding: 16px 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cn a {
+    color: #1a1a1a;
+}
+
+.cn:hover {
+    background: #e56a0f;
+}
+
+/* ===== LOGIN FORM CARD ===== */
+.form {
+    position: absolute;
+    top: 110px;
+    right: 60px;
+    z-index: 10;
+    width: 320px;
+    background: #0b0b0b;
+    border-radius: 10px;
+    padding: 30px 26px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.form h2 {
+    text-align: center;
+    background: #fff;
+    color: #ff7a1a;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.form input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #555;
+    color: #fff;
+    padding: 10px 0;
+    margin-bottom: 22px;
+    outline: none;
+    font-size: 14px;
+}
+
+.form input::placeholder {
+    color: #999;
+}
+
+.btnn {
+    width: 100%;
+    background: #ff7a1a;
+    border: none;
+    padding: 13px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.btnn a {
+    color: #1a1a1a;
+}
+
+.btnn:hover {
+    background: #e56a0f;
+}
+
+.link {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.link a {
+    color: #ff7a1a;
+    font-weight: 600;
+}
+
+.liw {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.icons ion-icon {
+    font-size: 22px;
+    color: #fff;
+    background: #1a1a1a;
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.icons a:hover ion-icon {
+    color: #ff7a1a;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .form {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 0 auto 40px;
+    }
+
+    .content {
+        max-width: 100%;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .par {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbar {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .content h1 {
+        font-size: 32px;
+    }
+}
